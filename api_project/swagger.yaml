@@ -1,0 +1,67 @@
+---
+swagger: "2.0"
+info:
+  description: This is a simple API
+  version: 1.0.0
+  title: Simple API
+host: localhost:5000
+basePath: /cars
+schemes:
+- http
+paths:
+  /:
+    get:
+      tags:
+      - Cars
+      summary: add a car to database
+      description: Car to add
+      operationId: getCar
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        "200":
+          description: list item
+    post:
+      tags:
+      - Cars
+      summary: add a car to database
+      description: Car to add
+      operationId: addCar
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: car
+        description: car to add
+        required: false
+        schema:
+          $ref: '#/definitions/CarItem'
+      responses:
+        "201":
+          description: item created
+definitions:
+  CarItem:
+    type: object
+    required:
+    - ano
+    - cor
+    - modelo
+    - placa
+    properties:
+      cor:
+        type: string
+        example: Prata
+      placa:
+        type: string
+        example: TST-1234
+      ano:
+        type: string
+        example: 2012/2013
+      modelo:
+        type: string
+        example: Corsa
