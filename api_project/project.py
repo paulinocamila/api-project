@@ -29,9 +29,9 @@ class Cars(Resource):
 
         query = conn.execute('select * from carro order by id desc limit 1')
         result = [dict(zip(tuple(query.keys()), i)) for i in query.cursor]
-        return result[0]['id']
+        return result[0]['id'], 201
 
-api.add_resource(Cars, '/cars') 
+api.add_resource(Cars, '/cars', '/cars/') 
 
 if __name__ == '__main__':
     app.run()
