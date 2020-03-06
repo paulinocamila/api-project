@@ -15,7 +15,7 @@ docker-compose up -d
 
 ## How to test
 
-Make a POST request in the endpoint bellow using the header content-type: application/json
+Make a POST request in the endpoint below using the header content-type: application/json
 
 Here's an example:
 ```
